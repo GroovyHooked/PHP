@@ -7,7 +7,7 @@
 //var_dump($_SESSION['user']);
 // Fonction erreur
 function show_error($key) {
-    global $errors; //Récupère la variable $errors dans la portée globale @param = $key / @return = String
+    global $errors; 
     return !empty($errors[$key]) ? '<span class="text-danger">'. $errors[$key] .'</span>' : '';
 }
 // Si trouvées, on stock les erreurs d'affichage
