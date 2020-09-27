@@ -1,5 +1,5 @@
 <?php
-
+     // Fonction récupératrice d'erreurs 
 function show_error($key) {
     global $errors; 
     return !empty($errors[$key]) ? '<span class="text-danger">'. $errors[$key] .'</span>' : '';
