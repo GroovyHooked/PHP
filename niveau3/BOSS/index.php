@@ -1,10 +1,10 @@
 <?php
-     // Fonction récupératrice d'erreurs 
+     // Fonction d'affichage d'erreurs 
 function show_error($key) {
     global $errors; 
     return !empty($errors[$key]) ? '<span class="text-danger">'. $errors[$key] .'</span>' : '';
 }
-// Si trouvées, on stock les erreurs d'affichage
+// Si trouvées, on stock les erreurs dans une variable
 if(!empty($_POST)){
     if(empty($_POST["joueur1"])){
         $errors["joueur1"] = "Ce champ est obligatoire";
