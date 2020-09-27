@@ -1,11 +1,5 @@
 <?php
-//echo session_save_path();
-//session_start();
-//$nbFichiers = 0;
-//$_SESSION["user"] = 0;
-//echo '<br>';
-//var_dump($_SESSION['user']);
-// Fonction erreur
+
 function show_error($key) {
     global $errors; 
     return !empty($errors[$key]) ? '<span class="text-danger">'. $errors[$key] .'</span>' : '';
@@ -69,7 +63,7 @@ if (isset($_POST['submit'])){
                 $destination = 'uploads/' . $nouveauNomDeFichier;
                 $destinationAlt = 'uploads/' . $nouveauNomDeFichierAlt;
 
-                if(file_exists($destination) || file_exists($destinationAlt) || $_SESSION["user"] == 0){
+                if(file_exists($destination) || file_exists($destinationAlt)){
                     $destination = 'uploads/'. $nouveauNomDeFichierAlt;
                     $messsageFichier = "L'image supplémentaire a bien été enregistrée";
                     move_uploaded_file($nomTmpFichier, $destination);
