@@ -22,9 +22,9 @@ if(!empty($_POST)){
 // Vérif du fichier à uploader
 
 if (isset($_POST['submit'])){
-
+      // variable d'erreur de fichier
     $fichier = $_FILES['upload-file'];  // ["ceci"] => name="["ceci"]" dans <form>
-        // variable d'erreur de fichier
+       
     if($_FILES['upload-file']['size'] === 0){
         $errors["upload-file"] = "Vous n'avez pas sélectionné d'image";
     }
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])){
         // Recup de l'extension fichier
     $extFichier = explode('.', $nomDuFichier);
     $reelExtFichier = strtolower(end($extFichier));
-
+          // Extensions acceptées 
     $accepter = ['jpg', 'png'];
 
     // Vérif extension
